@@ -1,0 +1,1144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Midland Graphics - Custom Apparel & Promotional Products</title>
+    <meta name="description" content="Create and customize premium business apparel easily. Design professional, high-quality garments for your company.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: #ffffff;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* MOVING BANNER */
+        .moving-banner {
+            background: #000;
+            color: #fff;
+            padding: 12px 0;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+        
+        .banner-content {
+            display: inline-block;
+            animation: scroll-left 30s linear infinite;
+            font-weight: 600;
+            font-size: 14px;
+            letter-spacing: 2px;
+        }
+        
+        @keyframes scroll-left {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+        
+        /* HEADER */
+        .header {
+            background: #fff;
+            border-bottom: 1px solid #e6e6e6;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 70px;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: #1a1a1a;
+            font-weight: 700;
+            font-size: 24px;
+        }
+        
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 16px;
+        }
+        
+        .nav {
+            display: flex;
+            gap: 32px;
+        }
+        
+        .nav-item {
+            color: #666;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        
+        .nav-item:hover {
+            color: #1a1a1a;
+        }
+        
+        .cta-button {
+            background: #6366f1;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+        
+        .cta-button:hover {
+            background: #5856eb;
+            transform: translateY(-1px);
+        }
+        
+        /* HERO SECTION */
+        .hero {
+            padding: 80px 0 60px 0;
+            text-align: center;
+            background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
+        }
+        
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #f1f5f9;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 500;
+            color: #64748b;
+            margin-bottom: 24px;
+        }
+        
+        .hero-title {
+            font-size: 48px;
+            font-weight: 800;
+            line-height: 1.1;
+            color: #1a1a1a;
+            margin-bottom: 20px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .hero-subtitle {
+            font-size: 20px;
+            color: #666;
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-bottom: 60px;
+            flex-wrap: wrap;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-value {
+            font-size: 24px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 4px;
+        }
+        
+        .stat-label {
+            font-size: 14px;
+            color: #666;
+            font-weight: 500;
+        }
+        
+        .hero-cta {
+            margin-bottom: 60px;
+        }
+        
+        .btn-primary {
+            background: #6366f1;
+            color: white;
+            padding: 16px 32px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.2s;
+            display: inline-block;
+            margin-right: 16px;
+        }
+        
+        .btn-primary:hover {
+            background: #5856eb;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(99, 102, 241, 0.25);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: #1a1a1a;
+            padding: 16px 32px;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.2s;
+            display: inline-block;
+        }
+        
+        .btn-secondary:hover {
+            border-color: #6366f1;
+            color: #6366f1;
+        }
+        
+        /* PRODUCTS SECTION */
+        .products-section {
+            padding: 80px 0;
+            background: #fff;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title {
+            font-size: 32px;
+            font-weight: 800;
+            color: #1a1a1a;
+            margin-bottom: 16px;
+        }
+        
+        .section-subtitle {
+            font-size: 18px;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 32px;
+            margin-bottom: 60px;
+        }
+        
+        .product-card {
+            background: #fff;
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            border: 1px solid #f1f5f9;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .product-image {
+            height: 240px;
+            background: linear-gradient(135deg, #f1f5f9, #e2e8f0);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .product-image-tshirt {
+            background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+        }
+        
+        .product-image-hoodie {
+            background: linear-gradient(135deg, #1f2937, #374151);
+        }
+        
+        .product-image-polo {
+            background: linear-gradient(135deg, #059669, #047857);
+        }
+        
+        .product-image-hat {
+            background: linear-gradient(135deg, #dc2626, #b91c1c);
+        }
+        
+        .product-shirt {
+            width: 120px;
+            height: 120px;
+            background: currentColor;
+            border-radius: 8px;
+            position: relative;
+        }
+        
+        .product-shirt::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 20px;
+            background: currentColor;
+            border-radius: 20px 20px 8px 8px;
+        }
+        
+        .product-shirt::after {
+            content: '';
+            position: absolute;
+            top: 10px;
+            left: -15px;
+            width: 30px;
+            height: 40px;
+            background: currentColor;
+            border-radius: 0 15px 15px 0;
+        }
+        
+        .product-shirt-right::after {
+            left: auto;
+            right: -15px;
+            border-radius: 15px 0 0 15px;
+        }
+        
+        .color-options {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            display: flex;
+            gap: 4px;
+        }
+        
+        .color-dot {
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            border: 2px solid white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .product-content {
+            padding: 20px;
+        }
+        
+        .product-name {
+            font-size: 18px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 8px;
+        }
+        
+        .product-id {
+            font-size: 12px;
+            color: #666;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        
+        .product-details {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 12px;
+        }
+        
+        .product-price {
+            font-size: 16px;
+            font-weight: 700;
+            color: #1a1a1a;
+        }
+        
+        /* PROCESS SECTION */
+        .process-section {
+            padding: 80px 0;
+            background: #f8fafc;
+        }
+        
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+        
+        .process-step {
+            text-align: center;
+        }
+        
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: #6366f1;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 20px;
+            margin: 0 auto 20px auto;
+        }
+        
+        .step-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 12px;
+        }
+        
+        .step-description {
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        /* USA SHIPPING SECTION */
+        .shipping-section {
+            padding: 80px 0;
+            background: #f8fafc;
+            text-align: center;
+        }
+        
+        .shipping-content {
+            display: flex;
+            align-items: center;
+            gap: 80px;
+            margin-top: 40px;
+        }
+        
+        .shipping-text {
+            flex: 1;
+            text-align: left;
+        }
+        
+        .shipping-visual {
+            flex: 1;
+            position: relative;
+        }
+        
+        .usa-map {
+            width: 100%;
+            max-width: 500px;
+            height: 350px;
+            background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+            border-radius: 20px;
+            position: relative;
+            overflow: hidden;
+            margin: 0 auto;
+        }
+        
+        .usa-map::before {
+            content: '🇺🇸';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 120px;
+            opacity: 0.3;
+        }
+        
+        .shipping-points {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+        
+        .shipping-point {
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            background: #ffffff;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+            box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
+        }
+        
+        .shipping-point:nth-child(1) { top: 20%; left: 15%; animation-delay: 0s; }
+        .shipping-point:nth-child(2) { top: 30%; left: 70%; animation-delay: 0.5s; }
+        .shipping-point:nth-child(3) { top: 60%; left: 25%; animation-delay: 1s; }
+        .shipping-point:nth-child(4) { top: 45%; left: 50%; animation-delay: 1.5s; }
+        .shipping-point:nth-child(5) { top: 70%; left: 80%; animation-delay: 2s; }
+        
+        @keyframes pulse {
+            0% {
+                transform: scale(0.95);
+                box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
+            }
+            70% {
+                transform: scale(1);
+                box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
+            }
+            100% {
+                transform: scale(0.95);
+                box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+            }
+        }
+        
+        .shipping-title {
+            font-size: 32px;
+            font-weight: 800;
+            color: #1a1a1a;
+            margin-bottom: 20px;
+        }
+        
+        .shipping-description {
+            font-size: 18px;
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+        
+        .shipping-features {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+        
+        .shipping-features li {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+            font-size: 16px;
+            color: #1a1a1a;
+        }
+        
+        .shipping-features li::before {
+            content: "✓";
+            background: #10b981;
+            color: white;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 12px;
+        }
+        .features-section {
+            padding: 80px 0;
+            background: #fff;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 60px;
+            margin-top: 60px;
+        }
+        
+        .feature-item {
+            text-align: center;
+        }
+        
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            margin: 0 auto 24px auto;
+            color: white;
+        }
+        
+        .feature-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 12px;
+        }
+        
+        .feature-description {
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        /* CTA SECTION */
+        .cta-section {
+            padding: 80px 0;
+            background: #1a1a1a;
+            color: white;
+            text-align: center;
+        }
+        
+        .cta-section h2 {
+            font-size: 36px;
+            font-weight: 800;
+            margin-bottom: 16px;
+        }
+        
+        .cta-section p {
+            font-size: 18px;
+            opacity: 0.8;
+            margin-bottom: 32px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .contact-info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+        
+        .contact-item {
+            text-align: center;
+        }
+        
+        .contact-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 16px auto;
+            font-size: 24px;
+        }
+        
+        .contact-item h4 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        
+        .contact-item p {
+            font-size: 14px;
+            opacity: 0.7;
+            margin: 0;
+        }
+        
+        /* FOOTER */
+        .footer {
+            background: #111;
+            color: white;
+            padding: 60px 0 30px 0;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-section h3 {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        
+        .footer-section p,
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            font-size: 14px;
+            line-height: 1.8;
+            display: block;
+            margin-bottom: 8px;
+        }
+        
+        .footer-section a:hover {
+            color: white;
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 30px;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 14px;
+        }
+        
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 36px;
+            }
+            
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .process-steps {
+                grid-template-columns: 1fr;
+            }
+            
+            .nav {
+                display: none;
+            }
+            
+            .hero-stats {
+                gap: 20px;
+            }
+            
+            .btn-primary,
+            .btn-secondary {
+                display: block;
+                margin: 8px auto;
+                width: fit-content;
+            }
+            
+            .shipping-content {
+                flex-direction: column;
+                gap: 40px;
+            }
+            
+            .shipping-text {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- MOVING BANNER -->
+    <div class="moving-banner">
+        <div class="banner-content">
+            SCREENPRINTING • EMBROIDERY • CUSTOM T-SHIRTS • CUSTOM HATS • PROMOTIONAL PRODUCTS • BUSINESS UNIFORMS • BRANDED APPAREL • SCREENPRINTING • EMBROIDERY • CUSTOM T-SHIRTS • CUSTOM HATS • PROMOTIONAL PRODUCTS • BUSINESS UNIFORMS • BRANDED APPAREL
+        </div>
+    </div>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="#home" class="logo">
+                    <div class="logo-icon">MG</div>
+                    Midland Graphics
+                </a>
+                <nav class="nav">
+                    <a href="#products" class="nav-item">Products</a>
+                    <a href="#services" class="nav-item">Services</a>
+                    <a href="#process" class="nav-item">How It Works</a>
+                    <a href="#contact" class="nav-item">Contact</a>
+                </nav>
+                <a href="#contact" class="cta-button">Get Started</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-badge">
+                🏆 40+ Years of Excellence
+            </div>
+            <h1 class="hero-title">Create and customize business apparel easily</h1>
+            <p class="hero-subtitle">Design professional, high-quality, custom garments and get them delivered to your business.</p>
+            
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <div class="stat-value">No Upfront Costs</div>
+                    <div class="stat-label">Start Today</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">No MOQs</div>
+                    <div class="stat-label">Any Quantity</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">1000+</div>
+                    <div class="stat-label">Happy Customers</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">40+ Years</div>
+                    <div class="stat-label">Experience</div>
+                </div>
+            </div>
+            
+            <div class="hero-cta">
+                <a href="#contact" class="btn-primary">Start Earning</a>
+                <a href="#products" class="btn-secondary">View Products</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRODUCTS SECTION -->
+    <section id="products" class="products-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Beautiful bestselling blanks, ready for your vision</h2>
+                <p class="section-subtitle">Midland Graphics' stylish high-quality garments are your canvas. Create spectacular designs on their large print areas.</p>
+            </div>
+            
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-image product-image-tshirt">
+                        <div class="product-shirt product-shirt-right" style="color: #3b82f6;"></div>
+                        <div class="color-options">
+                            <div class="color-dot" style="background: #3b82f6;"></div>
+                            <div class="color-dot" style="background: #1f2937;"></div>
+                            <div class="color-dot" style="background: #dc2626;"></div>
+                            <div class="color-dot" style="background: #059669;"></div>
+                        </div>
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-name">Premium Cotton T-Shirt</h3>
+                        <p class="product-id">#MG001</p>
+                        <p class="product-details">S-3XL | 16 colors | 180 gsm | 5.3 oz</p>
+                        <p class="product-price">From $8.99</p>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image product-image-hoodie">
+                        <div class="product-shirt" style="color: #1f2937; height: 140px; border-radius: 8px 8px 0 0;"></div>
+                        <div class="color-options">
+                            <div class="color-dot" style="background: #1f2937;"></div>
+                            <div class="color-dot" style="background: #374151;"></div>
+                            <div class="color-dot" style="background: #6b7280;"></div>
+                            <div class="color-dot" style="background: #3b82f6;"></div>
+                        </div>
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-name">Heavyweight Hoodie</h3>
+                        <p class="product-id">#MG002</p>
+                        <p class="product-details">S-2XL | 8 colors | 320 gsm | 9.4 oz</p>
+                        <p class="product-price">From $24.99</p>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image product-image-polo">
+                        <div class="product-shirt product-shirt-right" style="color: #059669;"></div>
+                        <div class="color-options">
+                            <div class="color-dot" style="background: #059669;"></div>
+                            <div class="color-dot" style="background: #3b82f6;"></div>
+                            <div class="color-dot" style="background: #1f2937;"></div>
+                            <div class="color-dot" style="background: #ffffff; border-color: #d1d5db;"></div>
+                        </div>
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-name">Professional Polo Shirt</h3>
+                        <p class="product-id">#MG003</p>
+                        <p class="product-details">S-3XL | 12 colors | 200 gsm | 5.9 oz</p>
+                        <p class="product-price">From $16.99</p>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image product-image-hat">
+                        <div style="width: 100px; height: 60px; background: #dc2626; border-radius: 50px 50px 8px 8px; position: relative;">
+                            <div style="position: absolute; bottom: -20px; left: 50%; transform: translateX(-50%); width: 120px; height: 8px; background: #dc2626; border-radius: 4px;"></div>
+                        </div>
+                        <div class="color-options">
+                            <div class="color-dot" style="background: #dc2626;"></div>
+                            <div class="color-dot" style="background: #1f2937;"></div>
+                            <div class="color-dot" style="background: #3b82f6;"></div>
+                            <div class="color-dot" style="background: #059669;"></div>
+                        </div>
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-name">Custom Baseball Cap</h3>
+                        <p class="product-id">#MG004</p>
+                        <p class="product-details">One Size | 8 colors | Cotton blend</p>
+                        <p class="product-price">From $12.99</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROCESS SECTION -->
+    <section id="process" class="process-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">You dream it. Midland Graphics delivers it.</h2>
+                <p class="section-subtitle">Our streamlined process makes custom apparel simple and affordable.</p>
+            </div>
+            
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">01</div>
+                    <h3 class="step-title">Create unique apparel</h3>
+                    <p class="step-description">Customize premium blank garments with our easy-to-use design consultation service.</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">02</div>
+                    <h3 class="step-title">Professional production</h3>
+                    <p class="step-description">We handle screenprinting and embroidery with state-of-the-art equipment and quality materials.</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">03</div>
+                    <h3 class="step-title">Deliver to your business</h3>
+                    <p class="step-description">Midland Graphics delivers your custom creations directly to your business quickly and professionally.</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">04</div>
+                    <h3 class="step-title">Build your brand</h3>
+                    <p class="step-description">Professional custom apparel that represents your business and builds customer confidence.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- USA SHIPPING SECTION -->
+    <section class="shipping-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">USA shipping, speedy delivery</h2>
+                <p class="section-subtitle">Enjoy fast fulfillment of our bestselling items from Massachusetts, or customize our entire collection with delivery anywhere in the United States.</p>
+            </div>
+            
+            <div class="shipping-content">
+                <div class="shipping-text">
+                    <h3 class="shipping-title">Coast to coast delivery</h3>
+                    <p class="shipping-description">From our facility in Marlborough, Massachusetts, we ship custom apparel to businesses across all 50 states. Fast, reliable delivery that keeps your team looking professional.</p>
+                    
+                    <ul class="shipping-features">
+                        <li>Fast shipping to all 50 states</li>
+                        <li>Express delivery available</li>
+                        <li>Real-time order tracking</li>
+                        <li>Bulk order discounts</li>
+                        <li>Professional packaging</li>
+                    </ul>
+                    
+                    <a href="#contact" class="btn-primary">Get Shipping Quote</a>
+                </div>
+                
+                <div class="shipping-visual">
+                    <div class="usa-map">
+                        <div class="shipping-points">
+                            <div class="shipping-point"></div>
+                            <div class="shipping-point"></div>
+                            <div class="shipping-point"></div>
+                            <div class="shipping-point"></div>
+                            <div class="shipping-point"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURES SECTION -->
+    <section id="services" class="features-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">We bring your designs to life with care and innovation</h2>
+                <p class="section-subtitle">Midland Graphics combines premium materials and state-of-the-art production processes to ensure exceptional quality garments at every step.</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">🌱</div>
+                    <h3 class="feature-title">Superior Quality Materials</h3>
+                    <p class="feature-description">We use only the highest quality blanks and materials, ensuring your custom apparel looks professional and lasts longer.</p>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon">🎨</div>
+                    <h3 class="feature-title">Advanced Printing Technology</h3>
+                    <p class="feature-description">We utilize state-of-the-art screenprinting and embroidery equipment to ensure vibrant, durable designs that meet the highest quality standards.</p>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon">⚡</div>
+                    <h3 class="feature-title">Fast Turnaround Times</h3>
+                    <p class="feature-description">Our efficient production process and experienced team ensure your orders are completed quickly without compromising quality.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA SECTION -->
+    <section id="contact" class="cta-section">
+        <div class="container">
+            <h2>Discover the best way to create custom business apparel</h2>
+            <p>Join hundreds of businesses who trust Midland Graphics to bring their brand to life. No minimum orders, fast delivery, and the best print quality in Massachusetts.</p>
+            
+            <div class="hero-cta">
+                <a href="tel:5084811234" class="btn-primary">Call Now: (508) 481-1234</a>
+                <a href="mailto:info@midlandgraphics.com" class="btn-secondary">Email Us</a>
+            </div>
+            
+            <div class="contact-info-grid">
+                <div class="contact-item">
+                    <div class="contact-icon">📍</div>
+                    <h4>Visit Our Shop</h4>
+                    <p>207 E Main St<br>Marlborough, MA 01752</p>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">🕒</div>
+                    <h4>Business Hours</h4>
+                    <p>Monday - Friday<br>8:00 AM - 5:00 PM</p>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">📞</div>
+                    <h4>Call Us</h4>
+                    <p>(508) 481-1234<br>Quick Response</p>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">📧</div>
+                    <h4>Email</h4>
+                    <p>info@midlandgraphics.com<br>Professional Service</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Midland Graphics</h3>
+                    <p>Transforming ideas into quality custom products for over 40 years. Your trusted partner for professional screenprinting and embroidery services in Massachusetts.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <a href="#services">Screenprinting</a>
+                    <a href="#services">Embroidery</a>
+                    <a href="#services">Design Services</a>
+                    <a href="#services">Rush Orders</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Products</h3>
+                    <a href="#products">Custom T-Shirts</a>
+                    <a href="#products">Polo Shirts</a>
+                    <a href="#products">Hoodies</a>
+                    <a href="#products">Custom Hats</a>
+                    <a href="#products">Promotional Items</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Industries</h3>
+                    <a href="#contact">Construction</a>
+                    <a href="#contact">Healthcare</a>
+                    <a href="#contact">Landscaping</a>
+                    <a href="#contact">Automotive</a>
+                    <a href="#contact">Restaurants</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p>207 E Main St<br>Marlborough, MA 01752</p>
+                    <a href="tel:5084811234">(508) 481-1234</a>
+                    <a href="mailto:info@midlandgraphics.com">info@midlandgraphics.com</a>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Midland Graphics. All rights reserved. | Serving Massachusetts businesses since 1983</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Update active nav item on scroll
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section[id]');
+            const navItems = document.querySelectorAll('.nav-item');
+            
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (window.pageYOffset >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navItems.forEach(item => {
+                item.classList.remove('active');
+                if (item.getAttribute('href') === `#${current}`) {
+                    item.classList.add('active');
+                }
+            });
+        });
+
+        // Mobile menu toggle (if needed)
+        const mobileMenuButton = document.querySelector('.mobile-menu-button');
+        const nav = document.querySelector('.nav');
+        
+        if (mobileMenuButton) {
+            mobileMenuButton.addEventListener('click', () => {
+                nav.classList.toggle('active');
+            });
+        }
+
+        // Add loading animation
+        window.addEventListener('load', () => {
+            document.body.style.opacity = '0';
+            document.body.style.transition = 'opacity 0.3s ease';
+            setTimeout(() => {
+                document.body.style.opacity = '1';
+            }, 100);
+        });
+
+        // Product card interactions
+        document.querySelectorAll('.color-dot').forEach(dot => {
+            dot.addEventListener('click', function(e) {
+                e.preventDefault();
+                const color = this.style.background;
+                const productShirt = this.closest('.product-image').querySelector('.product-shirt');
+                if (productShirt) {
+                    productShirt.style.color = color;
+                }
+            });
+        });
+    </script>
+</body>
+</html>
