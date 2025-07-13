@@ -26,7 +26,203 @@
             padding: 0 20px;
         }
         
-        /* ENHANCED MOVING BANNER */
+        /* HAMBURGER MENU */
+        .hamburger-menu {
+            position: relative;
+        }
+        
+        .hamburger-button {
+            width: 45px;
+            height: 45px;
+            background: linear-gradient(135deg, #000000, #333333);
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .hamburger-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+        }
+        
+        .hamburger-line {
+            width: 20px;
+            height: 2px;
+            background: white;
+            border-radius: 1px;
+            transition: all 0.3s ease;
+        }
+        
+        .hamburger-button.active .hamburger-line:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+        
+        .hamburger-button.active .hamburger-line:nth-child(2) {
+            opacity: 0;
+        }
+        
+        .hamburger-button.active .hamburger-line:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -6px);
+        }
+        
+        .hamburger-dropdown {
+            position: absolute;
+            top: 55px;
+            right: 0;
+            width: 350px;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            z-index: 9999;
+        }
+        
+        .hamburger-dropdown.active {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        
+        .dropdown-header {
+            padding: 20px 25px 15px 25px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+        
+        .dropdown-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 5px;
+        }
+        
+        .dropdown-subtitle {
+            font-size: 14px;
+            color: #666;
+        }
+        
+        .dropdown-menu {
+            padding: 15px 0;
+        }
+        
+        .menu-section {
+            margin-bottom: 20px;
+        }
+        
+        .menu-section:last-child {
+            margin-bottom: 10px;
+        }
+        
+        .menu-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 12px 25px;
+            text-decoration: none;
+            color: #1a1a1a;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .menu-item:hover {
+            background: rgba(0, 0, 0, 0.05);
+            transform: translateX(5px);
+        }
+        
+        .menu-item.private {
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(139, 92, 246, 0.1));
+            border-left: 3px solid #6366f1;
+        }
+        
+        .menu-item.private:hover {
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.15), rgba(139, 92, 246, 0.15));
+        }
+        
+        .menu-icon {
+            width: 24px;
+            height: 24px;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+        
+        .menu-icon.private {
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            color: white;
+        }
+        
+        .menu-icon.public {
+            background: #f1f5f9;
+            color: #64748b;
+        }
+        
+        .menu-content {
+            flex: 1;
+        }
+        
+        .menu-title {
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 2px;
+        }
+        
+        .menu-description {
+            font-size: 12px;
+            color: #666;
+            line-height: 1.4;
+        }
+        
+        .menu-badge {
+            background: #10b981;
+            color: white;
+            font-size: 10px;
+            font-weight: 600;
+            padding: 2px 6px;
+            border-radius: 4px;
+            text-transform: uppercase;
+        }
+        
+        .menu-badge.private {
+            background: #6366f1;
+        }
+        
+        .dropdown-footer {
+            padding: 15px 25px 20px 25px;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        
+        .dropdown-cta {
+            background: linear-gradient(135deg, #000000, #333333);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+        
+        .dropdown-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
         .moving-banner {
             background: linear-gradient(90deg, #000 0%, #1a1a1a 50%, #000 100%);
             color: #fff;
@@ -950,6 +1146,11 @@
         
         /* RESPONSIVE */
         @media (max-width: 768px) {
+            .hamburger-dropdown {
+                width: 320px;
+                right: -10px;
+            }
+            
             .hero-title {
                 font-size: 36px;
             }
@@ -1016,7 +1217,71 @@
                     <a href="#partners" class="nav-item">Partners</a>
                     <a href="#contact" class="nav-item">Contact</a>
                 </nav>
-                <a href="#contact" class="cta-button">Get Started</a>
+                <div class="hamburger-menu">
+                    <button class="hamburger-button" id="hamburgerBtn">
+                        <div class="hamburger-line"></div>
+                        <div class="hamburger-line"></div>
+                        <div class="hamburger-line"></div>
+                    </button>
+                    
+                    <div class="hamburger-dropdown" id="hamburgerDropdown">
+                        <div class="dropdown-header">
+                            <div class="dropdown-title">Portal & Services</div>
+                            <div class="dropdown-subtitle">Access tools and resources</div>
+                        </div>
+                        
+                        <div class="dropdown-menu">
+                            <div class="menu-section">
+                                <a href="#client-portal" class="menu-item private">
+                                    <div class="menu-icon private">👤</div>
+                                    <div class="menu-content">
+                                        <div class="menu-title">Client Portal</div>
+                                        <div class="menu-description">Visual configurator, quotes, samples & order history</div>
+                                    </div>
+                                    <div class="menu-badge private">Login</div>
+                                </a>
+                            </div>
+                            
+                            <div class="menu-section">
+                                <a href="#color-palette" class="menu-item">
+                                    <div class="menu-icon public">🎨</div>
+                                    <div class="menu-content">
+                                        <div class="menu-title">Color Palette</div>
+                                        <div class="menu-description">Pantone colors & thread samples</div>
+                                    </div>
+                                </a>
+                                
+                                <a href="#blog" class="menu-item">
+                                    <div class="menu-icon public">📝</div>
+                                    <div class="menu-content">
+                                        <div class="menu-title">Blog</div>
+                                        <div class="menu-description">Industry insights & custom apparel tips</div>
+                                    </div>
+                                </a>
+                                
+                                <a href="#material-selector" class="menu-item">
+                                    <div class="menu-icon public">🔍</div>
+                                    <div class="menu-content">
+                                        <div class="menu-title">Material Selector</div>
+                                        <div class="menu-description">Find materials by industry type</div>
+                                    </div>
+                                </a>
+                                
+                                <a href="#gallery" class="menu-item">
+                                    <div class="menu-icon public">📸</div>
+                                    <div class="menu-content">
+                                        <div class="menu-title">Work Gallery</div>
+                                        <div class="menu-description">Portfolio of completed projects</div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="dropdown-footer">
+                            <a href="#contact" class="dropdown-cta">Request Account</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </header>
@@ -1400,6 +1665,31 @@
     </footer>
 
     <script>
+        // Hamburger menu functionality
+        const hamburgerBtn = document.getElementById('hamburgerBtn');
+        const hamburgerDropdown = document.getElementById('hamburgerDropdown');
+        
+        hamburgerBtn.addEventListener('click', function() {
+            hamburgerBtn.classList.toggle('active');
+            hamburgerDropdown.classList.toggle('active');
+        });
+        
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(event) {
+            if (!hamburgerBtn.contains(event.target) && !hamburgerDropdown.contains(event.target)) {
+                hamburgerBtn.classList.remove('active');
+                hamburgerDropdown.classList.remove('active');
+            }
+        });
+        
+        // Close dropdown when clicking on menu items
+        document.querySelectorAll('.menu-item').forEach(item => {
+            item.addEventListener('click', function() {
+                hamburgerBtn.classList.remove('active');
+                hamburgerDropdown.classList.remove('active');
+            });
+        });
+
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
